@@ -6,8 +6,14 @@ import { useStore } from 'vuex';
 
 
 const store = useStore();
-const handleClick = async () => {
-  store.dispatch("getUserInfo")
+const handleClick = async (username: string) => {
+  // store.dispatch("getUserInfo")
+  store.dispatch({
+    type: "getUserInfo",
+    data: {
+      username,
+    }
+  })
 };
 </script>
 
@@ -15,6 +21,8 @@ const handleClick = async () => {
   <main>
     <!-- <TheWelcome /> -->
     <Header />
-    <Button type="primary" @click="handleClick">Primary Button</Button>
+    <Button type="primary" @click="handleClick('aa')">Button aa</Button>
+    <br>
+    <Button type="primary" @click="handleClick('bb')"> Button bb</Button>
   </main>
 </template>
