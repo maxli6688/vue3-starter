@@ -1,7 +1,8 @@
-import { createApp } from 'vue'
-import { createStore } from 'vuex'
+// import { createApp } from 'vue'
+import { createStore, Store } from 'vuex'
 
-
+import locale from './modules/locale'
+import type { LocaleState } from './modules/locale'
 
 const getUserInfo = async ({ commit }: any, options: any) => {
   // const res = await getUserInfos();
@@ -15,13 +16,18 @@ const setUser = (state: any, data: any) => {
   state.username = data.username;
   // state.access = data.access || '';
 };
-
-const store = createStore({
+export interface StoreState {
+  count: number,
+  username: string,
+  // plum: boolean
+  locale: LocaleState
+}
+const store = createStore<StoreState>({
   state() {
     return {
       count: 0,
       username: '',
-    }
+    } as StoreState
   },
   mutations: {
     increment(state) {
@@ -32,6 +38,10 @@ const store = createStore({
   actions: {
     getUserInfo
   },
+  modules: {
+    // locale
+    locale
+  }
 })
 
 export default store
