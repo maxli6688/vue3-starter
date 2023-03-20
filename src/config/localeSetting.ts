@@ -3,7 +3,7 @@
 
 
 export const LOCALE: { [key: string]: LocaleType } = {
-  ZH_CN: 'zh_CN',
+  ZH_CN: 'zh',
   EN_US: 'en',
   RU_RU: 'ru',
 };

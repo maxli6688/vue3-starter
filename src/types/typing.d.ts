@@ -1,4 +1,4 @@
-type LocaleType = 'zh_CN' | 'en' | 'ru' | 'ja' | 'ko';
+type LocaleType = 'zh' | 'en' | 'ru' | 'ja' | 'ko';
 
 
 interface LocaleSetting {
